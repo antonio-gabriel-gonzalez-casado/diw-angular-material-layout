@@ -1,0 +1,107 @@
+/* Definición de los estilos del tema */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+/* Color principal de los componentes */
+$custom-primary-map: (
+    50: #eff5fe, 
+    100: #e2ecfd, 
+    200: #c4dafa, 
+    300: #a1c6f8, 
+    400: #74b0f5, 
+    500: #2196f3, 
+    600: #1e88dc, 
+    700: #1a78c3, 
+    800: #1766a6, 
+    900: #125183, 
+    DEFAULT: #2196f3, 
+    contrast: (
+        50: #125183, 
+        100: #125183, 
+        200: #125183, 
+        300: #125183, 
+        400: #125183, 
+        500: #FFFFFF, 
+        600: #FFFFFF, 
+        700: #FFFFFF, 
+        800: #FFFFFF, 
+        900: #FFFFFF, 
+        DEFAULT: #FFFFFF)
+);
+
+/* Color usado en ciertos controles de componentes, enlaces y otros elementos secundarios */
+$custom-accent-map:(
+    50: #f8fafc, 
+    100: #f1f5f9, 
+    200: #e2e8f0, 
+    300: #cbd5e1, 
+    400: #94a3b8, 
+    500: #64748b, 
+    600: #475569, 
+    700: #334155, 
+    800: #1e293b, 
+    900: #0f172a, 
+    DEFAULT: #1e293b, 
+    contrast: (
+        50: #0f172a, 
+        100: #0f172a, 
+        200: #0f172a, 
+        300: #0f172a, 
+        400: #0f172a, 
+        500: #FFFFFF, 
+        600: #FFFFFF, 
+        700: #FFFFFF, 
+        800: #FFFFFF, 
+        900: #FFFFFF, 
+        DEFAULT: #FFFFFF)
+);
+
+/* Color usado para errores y mensajes de validación */
+$custom-warn-map: (
+    50: #fef2f2, 
+    100: #fee2e2, 
+    200: #fecaca, 
+    300: #fca5a5, 
+    400: #f87171,
+    500: #ef4444, 
+    600: #dc2626, 
+    700: #b91c1c, 
+    800: #991b1b, 
+    900: #7f1d1d, 
+    DEFAULT: #dc2626, 
+    contrast: (
+        50: #7f1d1d, 
+        100: #7f1d1d, 
+        200: #7f1d1d, 
+        300: #7f1d1d, 
+        400: #7f1d1d, 
+        500: #fef2f2, 
+        600: #FFFFFF, 
+        700: #FFFFFF, 
+        800: #FFFFFF, 
+        900: #FFFFFF, 
+        DEFAULT: #FFFFFF)
+);
+
+/* Definición de las paletas con los colores personalizados */
+$primary-palette: mat.define-palette($custom-primary-map);
+$accent-palette: mat.define-palette($custom-accent-map);
+$warn-palette: mat.define-palette($custom-warn-map);
+
+/* Sobreescribir los colores del tema con las nuevas paletas */
+$custom-theme: mat.define-light-theme((
+    color: (
+        primary: $primary-palette,
+        accent: $accent-palette,
+        warn: $warn-palette
+    )
+));
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
