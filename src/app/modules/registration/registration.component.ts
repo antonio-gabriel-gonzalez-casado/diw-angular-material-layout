@@ -7,20 +7,20 @@ import {Person} from './person.model';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
-  // Tallas para el atributo size el modelo Person
+  // Tallas para el atributo size del modelo Person
   sizes = ['XS', 'S', 'M', 'L', 'XL'];
 
   // Datos de ejemplo para la persona
-  model = new Person(1, "Antonio Gabriel", "González Casado", "prof.antoniogabriel@iesalixar.org", this.sizes[2], "CAIRS");
+  model = new Person(1, "Antonio Gabriel", "González Casado", 
+                    "prof.antoniogabriel@iesalixar.org", this.sizes[2], "CAIRS");
 
-  // Formulario enviado por defecto a falso
+  // Control de Formulario enviado por defecto a falso
   submitted = false;
 
-  // Una vez que el formulario está enviado entonces se establece a enviado.
+  // Una vez que el formulario se envía entonces se establece a enviado.
   onSubmit() { this.submitted = true; }
 
-  // Función para inicializar una nueva persona:
-
+  // Método para inicializar una nueva persona:
   newPerson () {
     this.model = new Person(2,"","","","");
   };

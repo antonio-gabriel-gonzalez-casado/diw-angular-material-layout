@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="lastName">Nombre</label>
+            <label for="lastName">Apellidos</label>
             <input type="text" class="form-control" id="lastName" name="lastName"
             #lastName="ngModel"
             required 
@@ -25,7 +25,6 @@
                 class="alert alert-danger"> El nombre es requerido
             </div>
         </div>
-
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email"
@@ -37,7 +36,6 @@
                 class="alert alert-danger"> El email es requerido
             </div>
         </div>
-
         <div class="form-group">
             <label for="size">Talla de Camiseta</label>
             <select class="form-control" id="size" name="size"
@@ -51,15 +49,18 @@
                 class="alert alert-danger"> La talla de camiseta es requerida
             </div>
         </div>
-
         <div class="form-group">
             <label for="running-club">Club de Running</label>
             <input type="text" class="form-control" id="running-club" name="running-club"
+            #runningClub="ngModel"
             [(ngModel)]="model.runningClub">
         </div>
 
         <button type="submit" class="btn btn-success" [disabled]="!personForm.form.valid">Enviar</button>
-        <button type="button" class="btn btn-secondary" (click)="newPerson(); personForm.reset()">Nueva Persona</button>
+        <button type="button" class="btn btn-secondary" (click)="newPerson();">Nueva Persona</button>
+        <button type="button" class="btn btn-secondary" (click)="personForm.reset()">Reset</button>
+        <button type="button" class="btn btn-secondary" (click)="newPerson();personForm.reset()">Nueva Persona y Reset</button>
+
 
     </form>    
 </div>
