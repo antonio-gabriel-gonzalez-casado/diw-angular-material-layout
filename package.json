@@ -6,9 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "build-aot": "node --max-old-space-size=512 ./node_modules/@angular/cli/bin/ng build --configuration production --aot",
-    "start-aot": "node --max-old-space-size=512 ./node_modules/@angular/cli/bin/ng serve --configuration production"
+    "test": "ng test"
 
   },
   "private": true,
