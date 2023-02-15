@@ -1,0 +1,25 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Angular Deploy gh-pages Actions
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+      with:
+        # see the Configuration section for how you can create secrets
+        github_access_token: ${{ secrets.ACCESS_TOKEN }} 
+        # The build environment for the app. please look configurations in your angular.json
+        build_configuration: production
+        # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+        base_href: /diw-angular-material-layout/
+        # The branch the action should deploy to.
+        deploy_branch: gh-pages 
+        # The folder where your project is supposed to be after running ng build by the action.
+        angular_dist_build_folder: dist/diw-angular-material-layout 
